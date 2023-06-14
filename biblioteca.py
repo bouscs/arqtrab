@@ -6,8 +6,8 @@ from usuario import Usuario
 
 
 class Biblioteca:
-    livros: Colecao[Livro, Literal["titulo"]]
-    usuarios: Colecao[Usuario, Literal["nome"]]
+    livros: Colecao[Livro, Literal["_titulo"]]
+    usuarios: Colecao[Usuario, Literal["_nome"]]
     locacoes: dict[Livro, Usuario]
 
     def __init__(self):
