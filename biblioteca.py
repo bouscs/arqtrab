@@ -28,7 +28,7 @@ class Biblioteca:
 
         if not self.esta_disponivel(livro):
             raise Exception(
-                f"Livro \"{livro.titulo}\" indisponível para empréstimo")
+                f"Livro \"{livro.obter_titulo()}\" indisponível para empréstimo")
 
         self.locacoes[livro] = usuario
 
