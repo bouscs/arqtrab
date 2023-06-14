@@ -4,6 +4,7 @@ from colecao import Colecao
 from livro import Livro
 from usuario import Usuario
 
+
 class Biblioteca:
     livros: Colecao[Livro, Literal["titulo"]]
     usuarios: Colecao[Usuario, Literal["nome"]]
@@ -16,6 +17,9 @@ class Biblioteca:
 
     # Verifica se um livro está disponível para empréstimo
     def esta_disponivel(self, livro: Livro):
+        if livro not in self.livros.items:
+            raise Exception("Livro não cadastrado")
+
         return livro not in self.locacoes
 
     # Realiza o empréstimo de um livro para um usuário
